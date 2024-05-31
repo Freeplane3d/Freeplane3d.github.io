@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freeplane: Unlocking Free Lunch in 
+    Triplane-Based Sparse-View Reconstruction Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+        "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
+        "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 300px;
+      height: 300px;
+    }
+  </style> 
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Freeplane: Unlocking Free Lunch in 
+            Triplane-Based Sparse-View Reconstruction Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/wenqsun">Wenqiang Sun</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://thuwzy.github.io">Zhengyi Wang</a><sup>2,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://chenshuo20.github.io">Shuo Chen</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://yikaiw.github.io">Yikai Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=2pbka1gAAAAJ&hl=en">Zilong Chen</a><sup>2,3</sup>,</span><br>
+            </span>
+            <span class="author-block">
+              <a href="https://ml.cs.tsinghua.edu.cn/~jun/">Jun Zhu</a><sup>2,3</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://eejzhang.people.ust.hk/home.html">Jun Zhang</a><sup>1</sup>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST,</span>
+            <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+            <span class="author-block"><sup>3</sup>ShengShu</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span style="font-weight: bold;">arXiv</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://freeplane3d.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://freeplane3d.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!--<span class="link-block">
+                <a href="./static/prolificdreamer.ppsx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-powerpoint"></i>
+                  </span>
+                  <span>Slides</span>
+                </a>
+              </span>-->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!--<span class="link-block">
+                <a href="https://github.com/thu-ml/prolificdreamer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>-->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Creating 3D assets from single-view images is a complex task that 
+            demands a deep understanding about the world. Recently, feed-forward 3D generative models 
+            have made significant progress by training large reconstruction models on 
+            extensive 3D datasets, with triplanes being the preferred 3D geometry representation. 
+            However, effectively utilizing the geometric priors of triplanes, 
+            while minimizing artifacts caused by generated inconsistent multi-view images, remains a challenge. 
+            In this work, we present <strong>Fre</strong>quency modulat<strong>e</strong>d tri<strong>plane</strong> (<strong>Freeplane</strong>),
+             a simple yet effective method to improve the generation quality of feed-forward models without additional training.
+             We first analyze the role of triplanes in feed-forward methods and 
+             find that the inconsistent multi-view images introduce high-frequency artifacts on triplanes, 
+             leading to low-quality 3D meshes. 
+             Based on this observation, we propose strategically filtering triplanes features and 
+             combining triplanes before and after filtering to produce high-quality textured meshes. 
+             These techniques incur no additional cost and can be seamlessly integrated into pre-trained feed-forward models 
+             to enhance their robustness against the inconsistency of generated multi-view images.
+             Both qualitative and quantitative results demonstrate that our method improves the performance of feed-forward models by simply modulating triplanes. 
+             All you need is to modulate the triplanes during inference.
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="./static/images/framework.png" alt="inference_page">
+    <p><strong>Figure 1</strong>.<strong>Freeplane Framework</strong>. <strong>(a) Feed-forward Pipeline.</strong> 
+      A single image is input into the multi-view diffusion model to generate six-view images, which are then fed into the triplane decoder. 
+      By querying the triplane features, Flexicubes are extracted to produce the textured mesh. 
+      We adopt the Freeplane approach on the triplanes. 
+      <strong>(b) Freeplane Operation</strong> Low-frequency filtering is applied to modulate the original triplanes. 
+      Triplanes before filtering are used to compute texture-related features, while those after filtering are utilized to predict mesh geometry.</p>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Generated Meshes</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <!-- <video id="matting-video" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/demo_v2.mp4"
+                      type="video/mp4">
+            </video> -->
+            <img src="./static/images/head.png" alt="inference_page">
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">More Result</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <!-- <video id="matting-video" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/demo_v2.mp4"
+                      type="video/mp4">
+            </video> -->
+            <img src="./static/images/demo.png" alt="inference_page">
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">More Result</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered"> -->
+          <!-- <div class="grid-container-4">
+            <video id="matting-video" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/demo_v2.mp4"
+                      type="video/mp4">
+            </video>
+          <div>
+              <video class="video" id="73" loop playsinline autoPlay muted
+              src="./static/videos/free_demo/miku_crm.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas class="videoMerge" id="73_merge"></canvas>
+          </div>
+          <div>
+              <video class="video" id="11" loop playsinline autoPlay muted
+              src="./static/videos/free_demo/miku_instant.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas class="videoMerge" id="11_merge"></canvas>
+          </div>
+          <div>
+              <video class="video" id="12" loop playsinline autoPlay muted
+              src="./static/videos/free_demo/pkq_crm.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas class="videoMerge" id="12_merge"></canvas>
+          </div>
+          <div>
+              <video class="video" id="10" loop playsinline autoPlay muted
+              src="./static/videos/free_demo/pkq_inst.mp4" onplay="resizeAndPlay(this)"></video>
+              <canvas class="videoMerge" id="10_merge"></canvas>
+          </div>
+            <p>
+            </p>
+          </div> -->
+        <!-- </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+<!-- </section> -->
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3"><center>Interactable Meshes</center></h2>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-6 is-one-third">
+          <p>Rose</p>
+          <model-viewer src="./static/models_3d/rose.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>Frog</p>
+          <model-viewer src="./static/models_3d/frog.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>Elephant</p>
+          <model-viewer src="./static/models_3d/elephant.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>        
+        </div>
+      </div>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-6 is-one-third">
+          <p>Doraemon</p>
+          <model-viewer src="./static/models_3d/dlam.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>Cat</p>
+          <model-viewer src="./static/models_3d/cat.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>school bus</p>
+          <model-viewer src="./static/models_3d/school_bus.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="0deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>        
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</section> -->
+
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Use CRM to create lego-style objects</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/lego_big.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Comparison with Existing Methods</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/compare_v1.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There are a lot of excellent works that are related to CRM.
+          </p>
+          <p>
+            <a href="https://ml.cs.tsinghua.edu.cn/~zhengyi/CRM/">CRM: Single Image to 3D Textured Mesh with Convolutional Reconstruction Model</a>
+          </p>
+          <p>
+            <a href="https://dreamfusion3d.github.io/">DreamFusion: Text-to-3D using 2D Diffusion</a>
+          </p>
+          <p>
+            <a href="https://pals.ttic.edu/p/score-jacobian-chaining">Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation</a>
+          </p>
+          <p>
+            <a href="https://research.nvidia.com/labs/dir/magic3d/">Magic3D: High-Resolution Text-to-3D Content Creation</a>
+          </p>
+          <p>
+            <a href="https://fantasia3d.github.io/">Fantasia3D: Disentangling Geometry and Appearance for High-quality Text-to-3D Content Creation</a>
+          </p>
+          <p>
+            <a href="https://github.com/eladrich/latent-nerf">Latent-NeRF for Shape-Guided Generation of 3D Shapes and Textures</a>
+          </p>
+          <p>
+            <a href="https://mrtornado24.github.io/DreamCraft3D/">DreamCraft3D: Hierarchical 3D Generation with Bootstrapped Diffusion Prior</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section> -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>This website highly refers to the  <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
